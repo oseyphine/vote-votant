@@ -1,0 +1,66 @@
+/*Orange PRINCIPAL : #e75c21
+Orange secondaire : #fcd7ba (PS)
+Blanc : #fff
+Noir : #333 ou #343434
+Gris foncé : #757575
+Gris clair : #eaeaea
+
+Bleu pour les liens <a> : #337ab7*/
+
+body{
+	font-family: "Helvetica";
+	background: url("./../images/bg-body.png") repeat;
+}
+
+header{
+	color: #e75c21;
+	background: url("./../images/bg-header.png") repeat;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.navbar-brand{
+	background: url("./../images/logo.gif") repeat;
+	width: 108px;
+	height: 108px;
+	margin-top: -40px;
+}
+
+section{
+	background: white;
+}
+
+.title{
+	color: #e75c21;	
+	background: url("./../images/bg-btn-orange.png") repeat;	
+}
+
+button{
+	width: -webkit-fill-available;
+    margin: 20px;
+    background: white;
+    color: #e75c21;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: #e75c21 solid;
+    border-right: #e75c21 solid;
+    border-radius: 20px;
+}
+
+button:hover{
+	width: -webkit-fill-available;
+    margin: 20px;
+    background: #e75c21;
+    color: white;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: white solid;
+    border-right: white solid;
+    border-radius: 20px;
+}
+
+footer{
+	color: #757575;
+	background: #eaeaea;
+	padding: 20px 0 20px 0;	
+}
