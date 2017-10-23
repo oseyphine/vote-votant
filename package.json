@@ -1,0 +1,24 @@
+{
+  "name": "vote-votant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oseyphine/vote-votant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oseyphine/vote-votant/issues"
+  },
+  "homepage": "https://github.com/oseyphine/vote-votant#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "nodemon": "^1.12.1"
+  }
+}
