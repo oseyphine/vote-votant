@@ -19,6 +19,9 @@
   "homepage": "https://github.com/oseyphine/vote-votant#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.4",
     "nodemon": "^1.12.1"
   }
 }

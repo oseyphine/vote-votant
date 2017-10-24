@@ -69,8 +69,7 @@ button:hover{
 
 .fond-blanc{
 	background: white;
-/*	margin: 20px 30px;
-*/}
+}
 
 input{
 	width: 100px;
@@ -90,9 +89,6 @@ header{
 header p{
 	color: #343434;
 }
-/*header h1{
-	margin: 40px 50px;
-}*/
 
 .inner-header{
 	display: flex;
@@ -115,8 +111,6 @@ header p{
 .inner-header img{
 	margin-top: 10%;
 	margin-bottom: 10%;
-/*	margin: 10px 20px;
-	width: 100%;*/
 }
 
 .inner-header h1{
@@ -163,17 +157,6 @@ header p{
   	}
 }
 
-@media screen and (min-width: 320px) and (max-device-width: 800px) {
-
-}
-
-/*.navbar-brand{
-	background: url("./../images/logo.gif") repeat;
-	width: 108px;
-	height: 108px;
-	margin-top: -40px;
-}*/
-
 /* SECTION */
 
 section{
@@ -188,9 +171,14 @@ section{
 	color: #e75c21;	
 	background: url("./../images/bg-btn-orange.png") repeat;	
 }
+
 .titre{
 	height: 74px;
 	padding: 20px;
+}
+
+.statut-vote{
+	margin-top: 20px;
 }
 
 .acces-vote{
@@ -199,6 +187,12 @@ section{
 
 .acces-vote:hover{
 	width: 250px;
+}
+
+/* IMAGE à voté! pour la confirmation */
+.avote{
+	width: 108px;
+	margin: 20px auto;
 }
 
 /* FOOTER */
