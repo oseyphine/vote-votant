@@ -32,7 +32,18 @@
     	</header>
     	<section>
     		<div id="bienvenue">
-	    		<p><span class="color-orange">M. X X</span>, porteur de mandats du syndicat <span class="color-orange">X</span>,</p>
+    			
+	    		<p><span class="color-orange">M.
+	    			<% for (let i=0; i<votant.length; i++){ %>
+    					<%= votant[i].nom %>
+    					<%= votant[i].prenom %>
+    				<% } %>
+    			</span>,
+    			 porteur de mandats du syndicat <span class="color-orange" style="text-transform: uppercase;">
+					<% for (let i=0; i<votant.length; i++){ %>
+    					<%= votant[i].syndicat %>
+    				<% } %>
+				</span>,</p>
 	    		<p>Bienvenue sur votre espace votant.</p>
 	    		<p>Veuillez sélectionner un vote <code>ouvert</code></p>
 	    	</div>
@@ -49,7 +60,6 @@
 			          			<p>Statutaire</p>
 							</button>
 						</a>
-	          			<img class="statut-vote" src="./images/padlock.png" alt="statut du vote">
 					</div>
 					
 					<div>
@@ -78,7 +88,7 @@
 			        	<a href="./choix.html">					
 			         		<button class="acces-vote" type="button">
 					        	<h4>VOTE 4</h4>
-					        	<p>Conseillés</p>
+					        	<p>Conseillers</p>
 							</button>
 						</a>
 	          			<img class="statut-vote" src="./images/padlock.png" alt="statut du vote">

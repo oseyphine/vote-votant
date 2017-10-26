@@ -1,30 +1,71 @@
 const express = require('express');
 const app = express();
 let getCfdtDB = require("./models/cfdtdb.js");
- console.log(getCfdtDB.getAll((err, articles) => {
- }))
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
-    res.end('Vous êtes à l\'accueil, ça va ?');
-});
+// db.collection("votant").find().toArray((err, response) => {
+// 	 console.log(response)
+// });
 
-app.get('/index', function(req, res) {
+// app.get('/', function(req, res) {
+//     res.setHeader('Content-Type', 'text/html');
+//     res.end('Vous êtes à l\'accueil, ça va ?');
+// });
+
+// app.get('/index', function(req, res) {
+//     res.setHeader('Content-Type', 'text/html');
+// 		res.render('index.ejs', 
+// 			{
+// 				vote : 
+// 				getCfdtDB.getAllVote((err, response) =>{ 
+// 					console.log(response)
+// 					for (let i=0; i<response.length; i++){
+// 						console.log(response[i])
+// 					}
+// 				}),
+// 				votant:
+// 				getCfdtDB.getAllVotant((err1, response1) =>{
+// 					console.log(response1)
+// 					for (let i=0; i<response.length; i++){
+// 						console.log(response1[i])
+// 					}				
+// 				})
+// 			});
+// 	});
+
+app.get('/home', function(req, res) {
     res.setHeader('Content-Type', 'text/html');
-    res.render('index.ejs', {});
+    getCfdtDB.getAllVotant((err, response) =>{
+ 		console.log(response);
+ 		res.render('home.ejs', {votant : response});
+	});
 });
 
 app.get('/home', function(req, res) {
     res.setHeader('Content-Type', 'text/html');
-    res.render('home.ejs', {name : getCfdtDB.nom});
+	
+    getCfdtDB.getAllVote((err, response) =>{
+ 		console.log(response);
+ 		res.render('home.ejs', {vote : response});
+	});
 });
 
 app.get('/choix', function(req, res) {
     res.setHeader('Content-Type', 'text/html');
-    res.render('choix.ejs', {});
+    getCfdtDB.getAllVotant((err, response) =>{
+ 		console.log(response);
+ 		res.render('choix.ejs', {votant : response});
+	});
 });
+
+// app.get('/choix', function(req, res) {
+//     res.setHeader('Content-Type', 'text/html');
+//     getCfdtDB.getAllVote((err, response) =>{
+//  		console.log(response);
+//  		res.render('choix.ejs', {vote : response});
+// 	});
+// });
 
 app.get('/confirmation', function(req, res) {
     res.setHeader('Content-Type', 'text/html');

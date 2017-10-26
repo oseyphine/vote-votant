@@ -3,11 +3,17 @@ class CFDTDB {
 		this.MongoClient = MongoClient;
 	}
 
-	getAll(callback){
-    	this.MongoClient.connect("mongodb://localhost:27017/cfdt", (err, db) => {
-    		db.collection("votant").find().toArray(callback)
-    	});
-	};
+    getAllVotant(callback){
+        this.MongoClient.connect("mongodb://localhost:27017/cfdt", (err, db) => {
+            db.collection("votant").find().toArray(callback)
+        });
+    };
+
+    getAllVote(callback){
+        this.MongoClient.connect("mongodb://localhost:27017/cfdt", (err, db) => {
+            db.collection("vote").find().toArray(callback)
+        });
+    };
 }
 
     // MongoClient.connect("mongodb://localhost:27017/blog", (err, db) => {

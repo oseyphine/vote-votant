@@ -34,11 +34,16 @@
     	<section>
 		    <div class="row title">
 		    	<div class="col-xs-9 titre">
-		        	<h4>VOTE STATUTAIRE</h4>		    		
+		        	<h4>VOTE 
+    				</h4>		    		
 		    	</div>
 		    	<div class="col-xs-3 fond-blanc">
 		        	<h4>Mandats restant</h4>
-		        	<p>0</p>	    		
+		        	<p>
+		        		<% for (let i=0; i<votant.length; i++){ %>
+    						<%= votant[i].nbr_mandats %>
+    					<% } %>
+		        	</p>	    		
 		    	</div>
 		    </div>
 	    		<div class="fond-blanc">
@@ -56,7 +61,7 @@
 		    			        	</button>
 		       			        </div>
 		    			        <div class="col-lg-4">
-		    			        	<input type="number" name="pour" placeholder="0" class="text-center">
+		    			        	<input type="number" name="pour" placeholder="0" class="text-center" min="0" max="400">
 		    			        </div>
 		    			        <div class="col-lg-4">
 		    			        	<button class="btn-right" type="button">
@@ -79,7 +84,7 @@
 		    			        	</button>
 		       			        </div>
 		    			        <div class="col-lg-4">
-		    			        	<input type="number" name="contre" placeholder="0" class="text-center">
+		    			        	<input type="number" name="pour" placeholder="0" class="text-center" min="0" max="400">
 		    			        </div>
 		    			        <div class="col-lg-4">
 		    			        	<button class="btn-right" type="button">
