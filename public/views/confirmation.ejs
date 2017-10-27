@@ -32,7 +32,9 @@
     	</header>
     	<section>
 		    <div class="row title">
-		        <h4>VOTE STATUTAIRE</h4>
+		        <h4>VOTE 
+		        	<%= vote[0].nom.toUpperCase() %>
+		    	</h4>
 		    </div>
 			<div class="fond-gris">
 				<h2>Confirmation de votre choix</h2>
@@ -40,12 +42,14 @@
 			        <div class="col-xs-6 proposition">
 			        	<div class="row">
 			        		<div class="col-lg-12 reponse">
-				        		<h4>« Pour »</h4>		        			
+				        		<h4>« 
+									<%= vote[0].reponse1 %>
+								 »</h4>
 			        		</div>
 			        	</div>
 					    <div class="row">
 	    			        <div class="col-xs-12">
-	    			        	<input type="number" name="pour" placeholder="0" class="text-center" disabled="">
+	    			        	<input type="number" name="pour" placeholder="<%= vote[0].nbrR1 %>" class="text-center" disabled="">
 	    			        </div>
 						</div>
 			        </div>
@@ -53,12 +57,14 @@
 			        <div class="col-xs-6 proposition">
 			        	<div class="row">
 			        		<div class="col-lg-12 reponse">
-				        		<h4>« Contre »</h4>		        			
+				        		<h4>« 
+									<%= vote[0].reponse2 %>
+								 »</h4>
 			        		</div>
 			        	</div>
 					    <div class="row">
 	    			        <div class="col-xs-12">
-	    			        	<input type="number" name="contre" placeholder="0" class="text-center" disabled="">
+	    			        	<input type="number" name="contre" placeholder="<%= vote[0].nbrR2 %>" class="text-center" disabled="">
 	    			        </div>
 						</div>
 			        </div>					    			
@@ -66,14 +72,14 @@
 				<h2>Voulez-vous valider définitivement ?</h2>
 			    <div class="row">
 			     	<div class="col-sm-6">
-			        	<a href="./avoter.html">					
+			        	<a href="http://localhost:8080/avoter">					
 			         		<button class="btn-left" type="button">
 					         	<h4>« Je valide »</h4>
 							</button>
 						</a>
 			     	</div>
 					<div class="col-sm-6">
-			        	<a href="./choix.html">					
+			        	<a href="http://localhost:8080/choix">					
 			         		<button class="btn-right" type="button">
 					         	<h4>Annuler</h4>
 							</button>

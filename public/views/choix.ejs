@@ -34,15 +34,16 @@
     	<section>
 		    <div class="row title">
 		    	<div class="col-xs-9 titre">
-		        	<h4>VOTE 
-    				</h4>		    		
+			        <h4>VOTE 
+			        	<%= vote[0].nom.toUpperCase() %>
+			    	</h4>
 		    	</div>
 		    	<div class="col-xs-3 fond-blanc">
 		        	<h4>Mandats restant</h4>
 		        	<p>
-		        		<% for (let i=0; i<votant.length; i++){ %>
+ 		        		<% for (let i=0; i<votant.length; i++){ %>
     						<%= votant[i].nbr_mandats %>
-    					<% } %>
+    					<% } %>		        		
 		        	</p>	    		
 		    	</div>
 		    </div>
@@ -51,7 +52,9 @@
 				        <div class="col-xs-6 proposition">
 				        	<div class="row">
 				        		<div class="col-xs-12 reponse">
-					        		<h4>« Pour »</h4>		        			
+					        		<h4>« 
+										<%= vote[0].reponse1 %>
+									 »</h4>
 				        		</div>
 				        	</div>
 						    <div class="row">
@@ -74,7 +77,9 @@
 				        <div class="col-xs-6 proposition">
 				        	<div class="row">
 				        		<div class="col-xs-12 reponse">
-					        		<h4>« Contre »</h4>		        			
+					        		<h4>« 
+										<%= vote[0].reponse2 %>
+									 »</h4>
 				        		</div>
 				        	</div>
 						    <div class="row">
@@ -96,7 +101,7 @@
 					</div>
 				    <div class="row">
 				     	<div class="col-lg-12">
-				        	<a href="./confirmation.html">					
+				        	<a href="http://localhost:8080/confirmation">					
 				         		<button type="button">
 						         	<h4>Valider</h4>
 								</button>

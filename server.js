@@ -1,80 +1,83 @@
 const express = require('express');
 const app = express();
 let getCfdtDB = require("./models/cfdtdb.js");
-
+console.log(getCfdtDB);
 app.use(express.static(__dirname + '/public'));
 
 // db.collection("votant").find().toArray((err, response) => {
 // 	 console.log(response)
 // });
 
+// **** PAGE PAR DEFAUT ***
+
 // app.get('/', function(req, res) {
 //     res.setHeader('Content-Type', 'text/html');
 //     res.end('Vous êtes à l\'accueil, ça va ?');
 // });
 
-// app.get('/index', function(req, res) {
-//     res.setHeader('Content-Type', 'text/html');
-// 		res.render('index.ejs', 
-// 			{
-// 				vote : 
-// 				getCfdtDB.getAllVote((err, response) =>{ 
-// 					console.log(response)
-// 					for (let i=0; i<response.length; i++){
-// 						console.log(response[i])
-// 					}
-// 				}),
-// 				votant:
-// 				getCfdtDB.getAllVotant((err1, response1) =>{
-// 					console.log(response1)
-// 					for (let i=0; i<response.length; i++){
-// 						console.log(response1[i])
-// 					}				
-// 				})
-// 			});
-// 	});
+// **** INDEX ***
 
-app.get('/home', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
-    getCfdtDB.getAllVotant((err, response) =>{
- 		console.log(response);
- 		res.render('home.ejs', {votant : response});
-	});
+app.get('/index', function(req, res) {
+    getCfdtDB.getAllVotant( (err, votants) =>{
+        getCfdtDB.getAllVote( (err, votes)=> {
+            res.render('index.ejs',{
+                vote: votes,
+                votant: votants
+            })
+        });
+    });
 });
 
+// **** HOME ***
+
 app.get('/home', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
-	
-    getCfdtDB.getAllVote((err, response) =>{
- 		console.log(response);
- 		res.render('home.ejs', {vote : response});
-	});
+    getCfdtDB.getAllVotant( (err, votants) =>{
+        getCfdtDB.getAllVote( (err, votes)=> {
+            res.render('home.ejs',{
+                vote: votes,
+                votant: votants
+            })
+        });
+    });
 });
+
+// **** CHOIX ***
 
 app.get('/choix', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
-    getCfdtDB.getAllVotant((err, response) =>{
- 		console.log(response);
- 		res.render('choix.ejs', {votant : response});
-	});
+    getCfdtDB.getAllVotant( (err, votants) =>{
+        getCfdtDB.getAllVote( (err, votes)=> {
+            res.render('choix.ejs',{
+                vote: votes,
+                votant: votants
+            })
+        });
+    });
 });
 
-// app.get('/choix', function(req, res) {
-//     res.setHeader('Content-Type', 'text/html');
-//     getCfdtDB.getAllVote((err, response) =>{
-//  		console.log(response);
-//  		res.render('choix.ejs', {vote : response});
-// 	});
-// });
+// **** CONFIRMATION ***
 
 app.get('/confirmation', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
-    res.render('confirmation.ejs', {});
+    getCfdtDB.getAllVotant( (err, votants) =>{
+        getCfdtDB.getAllVote( (err, votes)=> {
+            res.render('confirmation.ejs',{
+                vote: votes,
+                votant: votants
+            })
+        });
+    });
 });
 
+// **** AVOTE! ***
+
 app.get('/avoter', function(req, res) {
-    res.setHeader('Content-Type', 'text/html');
-    res.render('avoter.ejs', {});
+    getCfdtDB.getAllVotant( (err, votants) =>{
+        getCfdtDB.getAllVote( (err, votes)=> {
+            res.render('avoter.ejs',{
+                vote: votes,
+                votant: votants
+            })
+        });
+    });
 });
 
 app.use(function(req, res, next){
